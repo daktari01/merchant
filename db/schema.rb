@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180122113639) do
+ActiveRecord::Schema.define(version: 20180122122843) do
 
-  create_table "orderitems", force: :cascade do |t|
+  create_table "order_items", force: :cascade do |t|
     t.integer "product_id"
     t.integer "order_id"
     t.integer "quantity"
