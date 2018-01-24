@@ -2,22 +2,6 @@ class OrderItemsController < ApplicationController
   before_action :load_order, only: [:create]
   before_action :set_order_item, only: [:show, :edit, :update, :destroy]
 
-  # GET /order_items
-  # GET /order_items.json
-  def index
-    @order_items = OrderItem.all
-  end
-
-  # GET /order_items/1
-  # GET /order_items/1.json
-  def show
-  end
-
-  # GET /order_items/new
-  def new
-    @order_item = OrderItem.new
-  end
-
   # GET /order_items/1/edit
   def edit
   end
@@ -25,7 +9,7 @@ class OrderItemsController < ApplicationController
   # POST /order_items
   # POST /order_items.json
   def create
-    @order_item = OrderItem.new(product_id: params[:product_id], order_id: @order.id)
+    @order_item = @order.order_items.new(quantity: 1, product_id: params[:product_id])
 
     respond_to do |format|
       if @order_item.save
