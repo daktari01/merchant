@@ -26,8 +26,16 @@
     <td><%= item.product.title %></td>
     <td><%= item.quantity %></td>
     <td><%= print_price(item.product.price) %></td>
-    <td> print_price() %></td>
+    <td><%= print_price item.subtotal %></td>
+    <td><%= link_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Total:</td>
+    <td><%= print_price @order.total %></td>
+  </tr>
 </table>
 
