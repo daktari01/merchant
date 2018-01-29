@@ -37,5 +37,10 @@
     <td>Total:</td>
     <td><%= print_price @order.total %></td>
   </tr>
+  <tr>
+    <td><%= link_to 'Back', products_path %></td>
+    <td></td>
+    <td><%= link_to 'Empty Cart', @order, data: { confirm: 'Empty this cart?' }, method: :delete %></td>
+  </tr>
 </table>
 
