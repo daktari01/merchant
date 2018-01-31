@@ -8,4 +8,10 @@ Rails.application.routes.draw do
   match "/login" => redirect("/auth/twitter"), as: :login, via: :get
   match "/logout" => "sessions#destroy", as: :logout, via: :get
   root to: "products#index"
+
+  resources :orders do
+    member do
+      get :confirm
+    end
+  end
 end
